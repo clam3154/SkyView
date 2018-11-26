@@ -4,17 +4,23 @@ public class SkyView
     public SkyView(int numRows, int numCols, double[] scanned)
     {
         int num = 0;
-        int dir;
         for(int i = 0; i < numRows; i++)
         {
             if((i%2) == 0)
-                dir = 1;
-            else
-                dir = -1;
-            for(int j = 0; j < numCols; j+=dir)
             {
-                view[i][j] = scanned[num];
-                num++;
+                for(int j = 0; j < numCols; j++)
+                {
+                    view[i][j] = scanned[num];
+                    num++;
+                }
+            }
+            else
+            {
+                for (int j = numCols-1; j > 0; j--)
+                {
+                    view[i][j] = scanned[num];
+                    num++;
+                }
             }
         }
     }
