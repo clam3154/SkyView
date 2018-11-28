@@ -13,15 +13,20 @@ public class SkyView
                 {
                     view[i][j] = scanned[num];
                     num++;
-                    System.out.print(view[i][j] + " ");
                 }
             } else {
                 for (int j = numCols - 1; j > 0; j--)
                 {
                     view[i][j] = scanned[num];
                     num++;
-                    System.out.print(view[i][j] + " ");
                 }
+            }
+        }
+        for(int i = 0; i<view.length; i++)
+        {
+            for(int j=0; j<view[i].length; j++)
+            {
+                System.out.print(view[i][j] + ",");
             }
             System.out.println();
         }
